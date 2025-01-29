@@ -9,6 +9,9 @@ https://github.com/user-attachments/assets/f151db88-270e-477c-8331-5bd4adae2c9f
 This is a web application that helps users solve math problems by capturing an image of the problem and sending it to the Google Gemini API for processing. The solution is then displayed to the user.
 
 ---
+## Demo link
+https://mathsolveraieasy.netlify.app/
+
 
 ## Features
 
@@ -34,3 +37,4 @@ This is a web application that helps users solve math problems by capturing an i
 - HTML, CSS, and JavaScript for the frontend.
 - JavaScript's `getUserMedia` API for accessing the camera.
 - Google Gemini API for solving math problems.
+  
