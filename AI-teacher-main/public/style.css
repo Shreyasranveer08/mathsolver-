@@ -1,0 +1,57 @@
+body {
+    background-image: url('https://www.shutterstock.com/image-vector/back-school-doodle-hand-drawn-260nw-2479543309.jpg');
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    height: 100vh; /* Ensures the body takes full height of the viewport */
+    margin: 0; /* Removes default margin */
+}
+body {
+    background-color: #f0f0f0; /* Light gray background */
+    font-family: Arial, sans-serif; /* Optional: set a font for better readability */
+    margin: 0;
+    padding: 0;
+}
+.camera-container {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+#video {
+    width: 100%;
+    height: auto;
+    background-color: #020202;
+}
+#canvas {
+    display: none;
+}
+.step {
+    display: none;
+}
+.step.active {
+    display: block;
+}
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3B82F6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: none;
+    margin: 1rem auto;
+}
+/* Position the name in the top-left corner */
+#top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-style:impact ;
+    font-weight: bold;
+    color: #060007;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

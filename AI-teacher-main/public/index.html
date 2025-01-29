@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Problem Solver</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css" />
+    <style>
+        /* Adding background image directly inside the <style> tag */
+        body { 
+            background-image: url('https://www.shutterstock.com/image-vector/back-school-doodle-hand-drawn-260nw-2479543309.jpg');
+            background-size: cover; /* Ensures the image covers the whole page */
+            background-position: center; /* Centers the image */
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            height: 100vh; /* Ensures the body takes full height of the viewport */
+            margin: 0; /* Removes default margin */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-4">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8">Math Problem Solver</h1>
+
+        <!-- Permissions Step -->
+        <div id="step0" class="step active bg-white rounded-lg shadow-lg p-6 mb-6 text-center">
+            <h2 class="text-xl font-semibold mb-4">Camera Permission Required</h2>
+            <p class="mb-4">We need access to your camera to capture the math problem.</p>
+            <button id="grantPermissions" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                Grant Permissions
+            </button>
+        </div>
+        
+        <!-- Camera Step -->
+        <div id="step1" class="step bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="camera-container mb-4">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas"></canvas>
+                <img id="photoPreview" class="w-full hidden rounded-lg" alt="Captured math problem">
+            </div>
+
+            <div class="controls flex flex-wrap gap-4 justify-center">
+                <button id="captureBtn" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                    Capture Image
+                </button>
+                <input type="file" id="fileInput" accept="image/*" class="hidden">
+                <button id="uploadBtn" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    Upload Image
+                </button>
+            </div>
+        </div>
+        
+
+        <!-- Processing Step -->
+        <div id="step2" class="step bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Process Image</h2>
+            <div class="spinner" id="spinner"></div>
+            <div id="errorMessage" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg"></div>
+            <button id="processButton" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                Solve Problem
+            </button>
+        </div>
+
+        <!-- Result Step -->
+        <div id="step3" class="step bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">Solution</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="font-medium mb-2">Captured Image:</h3>
+                    <img id="capturedImage" class="w-full rounded-lg" alt="Captured math problem">
+                </div>
+                <div>
+                    <h3 class="font-medium mb-2">Solution:</h3>
+                    <div id="solution" class="prose"></div>
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <button id="startOver" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                    Start Over
+                </button>
+            </div>
+        </div>
+        </div> 
+    </div>
+</body>
+<script type="module" src="script.js"></script>
+    <!-- KaTeX JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</html>
